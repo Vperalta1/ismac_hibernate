@@ -17,7 +17,7 @@ public class PrincipalCliente {
 		
 		//CRUD
 		//findAll
-		List<Cliente> clientes=clienteDAO.findALL();
+		List<Cliente> clientes=clienteDAO.findAll();
 		
 		//impresion
 		for (Cliente item : clientes) {

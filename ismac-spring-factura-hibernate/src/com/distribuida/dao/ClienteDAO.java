@@ -7,9 +7,9 @@ public interface ClienteDAO {
 
 	//CRUD: Create,Read,Update,Delete
 	///      ADD  findSelect	Up	del
-	public List <Cliente> findALL();
+public List<Cliente> findAll();
 	
-	public Cliente findOne();
+	public Cliente findOne(int id);
 	
 	public void add(Cliente cliente);
 	

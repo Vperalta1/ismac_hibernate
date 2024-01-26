@@ -4,21 +4,60 @@ import java.util.Date;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 import org.springframework.stereotype.Component;
 
+
 @Component
+@Entity
+@Table(name = "cliente")
 public class Cliente {
-	private int idCliente;
-	private String nombre;
-	private String apellido;
-	private String cedula;
-	private int edad; 
-	private Date fechaNacimiento;
-	private String direccion;
-	private String correo;
-	private String telefono;
 	
+	 //id_cliente, cedula, nombre, apellido, edad, fecha_nac, direccion, telefono, correo
+	
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	 @Column(name = "id_Cliente")
+	private int idCliente;
+	 @Column(name = "nombre")
+	private String nombre;
+	 @Column(name = "apellido")
+	private String apellido;
+	 @Column(name = "cedula")
+	private String cedula;
+	 @Column(name = "edad")
+	private int edad;
+	 @Column(name = "fecha_nac")
+	private Date fechaNacimiento;
+	 @Column(name = "direccion")
+	private String direccion;
+	 @Column(name = "correo")
+	private String correo;
+	 @Column(name = "telefono")
+	private String telefono;
+	 
+	public Cliente(int idCliente, String nombre, String apellido, String cedula, int edad, Date fechaNacimiento,
+			String direccion, String correo, String telefono) {
+		super();
+		this.idCliente = idCliente;
+		this.nombre = nombre;
+		this.apellido = apellido;
+		this.cedula = cedula;
+		this.edad = edad;
+		this.fechaNacimiento = fechaNacimiento;
+		this.direccion = direccion;
+		this.correo = correo;
+		this.telefono = telefono;
+	}
+	
+
 	public Cliente() {
 		
 	}
